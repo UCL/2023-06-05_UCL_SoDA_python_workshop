@@ -97,5 +97,28 @@ https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js
 
 <script src="{{ relative_root_path }}/assets/js/anchor.min.js"></script>
 <script>
-    anchors.add();
+ anchors.add();
+</script>
+
+<script>
+    async function setupCopyables() {
+    if (navigator.clipboard) {
+    for (const element of document.getElementsByClassName('copyable')) {
+    let text = element.innerText.trim();
+    if (text.startsWith('$')) {
+    text = text.substr(1).trimLeft();
+    }
+
+    const button = document.createElement('button');
+    button.innerHTML = '📋';
+    button.setAttribute('aria-label', 'Copy to clipboard');
+    button.onclick = () => {
+    navigator.clipboard.writeText(text);
+    button.innerHTML = '✅';
+    setTimeout(() => button.innerHTML='📋', 1000);
+    }
+    element.appendChild(button);
+    }
+    }
+    }
 </script>

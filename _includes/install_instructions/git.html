@@ -4,7 +4,7 @@ Shell instructions as part of your workshop website, make sure to adjust
 the text below accordingly.
 {% endcomment %}
 <div id="git">
-  <h3>Git</h3>
+  <h3>Git and GitHub</h3>
   <p>
     Git is a version control system that lets you track who made changes
     to what when and has options for easily updating a shared or public
@@ -37,21 +37,41 @@ the text below accordingly.
           install (see the
           <a href="#shell">Shell installation instructions</a>).
         </p>
+        <p>
+            You will also need to install <a href="https://cli.github.com/">GitHub's CLI</a>. Download <a href="https://github.com/cli/cli/releases/download/v2.30.0/gh_2.30.0_windows_amd64.msi">the windows' installer</a> and install it.
+        </p>
       </article>
       <article role="tabpanel" class="tab-pane" id="git-macos">
         <p>
-          <strong>For macOS</strong>, install Git for Mac
-          by downloading and running the most recent "mavericks" installer from
-          <a href="http://sourceforge.net/projects/git-osx-installer/files/">this list</a>.
-          Because this installer is not signed by the developer, you may have to
-          right click (control click) on the .pkg file, click Open, and click
-          Open on the pop up window.
-          After installing Git, there will not be anything in your <code>/Applications</code> folder,
-          as Git is a command line program.
-          <strong>For older versions of OS X (10.5-10.8)</strong> use the
-          most recent available installer labelled "snow-leopard"
-          <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
+            <strong>For macOS</strong>, there are various ways to install Git. Since we will need to install GitHub's CLI too, then we recommend installing it using <a href="http://brew.sh/">homebrew</a>. To do so you'll need to follow these steps:
+            <ol>
+                <li>Open a <a href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">terminal window</a> </li>
+                <li>Type:
+                    <div class="copyable">
+                        <figure class="highlight"><pre><code class="language-bash" data-lang="bash">/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span></code></pre></figure>
+                    <button aria-label="Copy to clipboard">📋</button>
+                    </div>
+                </li>
+                <li>
+                    Follow the installation prompts
+                </li>
+                <li>
+                    Once it's installed, run:
+                    <code>
+                      brew install git
+                    </code>
+                    To install <code>git</code>, and
+                    <code>
+                      brew install gh
+                    </code> to install GitHub's CLI.
+                </li>
+
+            </ol>
         </p>
+        <p>
+            You will also need to install <a href="https://cli.github.com/">GitHub's CLI</a>. Download <a href="https://github.com/cli/cli/releases/download/v2.30.0/gh_2.30.0_windows_amd64.msi">the windows' installer</a> and install it.
+        </p>
+
         <h4>Video Tutorial</h4>
         <div class="yt-wrapper2">
         <div class="yt-wrapper">
@@ -65,6 +85,9 @@ the text below accordingly.
           install it via your distro's package manager. For Debian/Ubuntu run
           <code>sudo apt-get install git</code> and for Fedora run
           <code>sudo dnf install git</code>.
+        </p>
+        <p>
+            To install GitHub's CLI <a href="https://github.com/cli/cli#linux--bsd"> follow the option according to your Linux distribution</a>.
         </p>
       </article>
     </div>
